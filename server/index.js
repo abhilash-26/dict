@@ -20,4 +20,8 @@ mongoose
 
 app.use("/app", require("./routes/index"));
 
+if (process.env.NODE_ENV == "production") {
+  app.use(express.static("webclient/build"));
+}
+
 app.listen(PORT, () => console.log(`server is up and running on port ${PORT}`));
