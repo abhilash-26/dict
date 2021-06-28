@@ -15,6 +15,7 @@ const saveToDb = async (req, res) => {
     });
     const createdData = await Word.create({
       wordName: name,
+
       wordDefinition:
         result.data.results[0].lexicalEntries[0].entries[0].senses[0]
           .definitions[0],
